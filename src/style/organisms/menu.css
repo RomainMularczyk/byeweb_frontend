@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .menu-list {
+    @apply flex flex-row justify-between;
+  }
+
+  .menu-item {
+    @apply flex-grow self-center
+    pt-3 pb-3
+    border-r-2 border-t-2 border-b-2
+    border-solid border-black
+    hover:bg-black hover:text-white;
+  }
+
+  .menu-item-text {
+    @apply flex flex-row justify-center
+    text-2xl font-medium antialiased;
+  }
+}

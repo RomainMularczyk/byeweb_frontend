@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .footer {
+    @apply mt-auto
+    min-h-0
+    pt-2 pb-2
+    border-t-2 border-black;
+  }
+
+  .footer-text {
+    @apply flex flex-row justify-center;
+  }
+}
