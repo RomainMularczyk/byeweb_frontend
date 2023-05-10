@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .book-list {
+    @apply grid grid-cols-2 gap-20 place-items-center
+    pr-16 pl-16 pt-10;
+  }
+
+  .book-card {
+    @apply flex flex-row justify-between
+    hover:bg-dark-primary hover:text-light-primary
+    max-w-2xl max-h-[22rem]
+    min-w-full min-h-full
+    pl-4 pr-4 pt-2 pb-2
+    hover:cursor-pointer
+    border-l-2 border-dark-primary;
+  }
+
+  .book-list-metadata {
+    @apply flex flex-col gap-1;
+  }
+
+  .book-title {
+    @apply text-xl font-bold;
+  }
+
+  .book-metadata {
+    @apply font-medium;
+  }
+}
