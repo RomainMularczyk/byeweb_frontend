@@ -1,0 +1,23 @@
+---
+import axios from "axios";
+import type { Book as BookType } from "../../types/Book";
+import Layout from "../../layouts/Layout.astro";
+import BookPageLayout from "../../components/Books/molecules/BookPageLayout.svelte";
+import Book from "../../components/Books/organisms/Book.svelte";
+
+export async function getStaticPaths() {
+  let books = await axios.get("http://localhost:5000/books");
+  const paths = books.data.data.map((book: BookType) => {
+    return {
+      params: { isbn: book.isbn },
+    };
+  });
+  return paths;
+}
+
+const { isbn } = Astro.params;
+---
+
+<Layout title={isbn ? isbn : "book not found"}>
+  <Book {isbn} client:visible />
+</Layout>
