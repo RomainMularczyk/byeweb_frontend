@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .book-page {
+    @apply flex flex-row justify-around
+    border-2 border-dark-secondary
+    mr-10 ml-10 mt-10;
+  }
+
+  .book-page-cover {
+    @apply flex;
+  }
+}
