@@ -1,0 +1,5 @@
+@import "../molecules/adminLogin.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
