@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .error-img {
+    @apply flex flex-row justify-center
+    border-2 border-dark-primary;
+  }
+}
