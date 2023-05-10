@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input-secondary {
+    @apply bg-light-secondary
+        text-xl
+        h-12
+        pl-2 pr-2;
+  }
+
+  .input-label {
+  }
+}

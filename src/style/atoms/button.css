@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-secondary {
+    @apply border-2 border-dark-primary
+        bg-light-secondary
+        pt-2 pb-2
+        hover:bg-dark-primary 
+        hover:text-light-primary
+        min-w-[10%];
+  }
+}

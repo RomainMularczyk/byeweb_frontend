@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .form-secondary {
+    @apply flex flex-col gap-10 
+    items-center
+    pt-12;
+  }
+}
