@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .admin-form {
+    @apply flex flex-col gap-10 items-center
+    pt-12;
+  }
+
+  .admin-input {
+    @apply bg-light-secondary
+    text-xl
+    h-12
+    pl-2 pr-2;
+  }
+
+  .admin-btn {
+    @apply border-2 border-dark-primary
+    bg-light-secondary
+    pt-2 pb-2
+    hover:bg-dark-primary 
+    hover:text-light-primary
+    min-w-[10%];
+  }
+}
