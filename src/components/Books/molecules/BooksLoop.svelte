@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { Book } from "../../../types/Book";
-  import BookCard from "./BookCard.svelte";
+  import BookCardLayout from "./BookCardLayout.svelte";
 
   export let books: Book[];
 </script>
 
 <div class="book-list">
   {#each books as book}
-    <BookCard {book} />
+    <BookCardLayout {book} />
   {/each}
 </div>

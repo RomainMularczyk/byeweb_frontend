@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let isbn: number;
+  export let isbn: string;
 </script>
 
 <p>
