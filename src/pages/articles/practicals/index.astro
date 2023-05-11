@@ -1,0 +1,16 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles", ({ data }) => {
+  return data.isDraft !== false;
+});
+---
+
+<Layout title="practicals">
+  {
+    articles.map((article) => {
+      return <article>{article.data.title}</article>;
+    })
+  }
+</Layout>
