@@ -1,0 +1,16 @@
+---
+import ArticleAbstract from "../atoms/ArticleAbstract.astro";
+import ArticleAuthor from "../atoms/ArticleAuthor.astro";
+import ArticleDate from "../atoms/ArticleDate.astro";
+import ArticleTags from "../atoms/ArticleTags.astro";
+import ArticleTitle from "../atoms/ArticleTitle.astro";
+const { metadata } = Astro.props;
+---
+
+<a href=`${metadata.slug}`>
+  <ArticleTitle title={metadata.title} />
+  <ArticleAuthor author={metadata.author} />
+  <ArticleDate date={metadata.date} />
+  <ArticleAbstract abstract={metadata.abstract} />
+  <ArticleTags tags={metadata.tags} />
+</a>
