@@ -1,0 +1,55 @@
+---
+isDraft: false
+title: Atomic web design
+tags:
+  - web development
+date: 2023-05-11
+author: Byeweb
+---
+
+# {title}
+
+## principles
+
+**atomic web design** is all about **modularity**. we might expect to find the same positive outcomes to modularization in web design, but web technologies have specific intricacies : managing semantic and layout elements (html), handling styling elements (css) and sparkles of interactivity that also go with its own set of files and logic (javascript).
+
+the idea behind **atomic web design** is to provide consistency, cohesion and
+reusable elements that are easier to maintain over time and that can scale
+easily. on the practical side, this also impels to think about the way we want
+to build a web application.
+
+let's list the principles :
+
+- encourages the use of shared vocabulary, makes it easier to communicate about
+  the code base
+- results in a coherent style framework
+- makes web elements reusable and, thus, scalable and maintainable
+- makes testing easier by providing smaller interfaces that are testable in isolation
+- forces to think about an implementation before actually building it
+
+## the sauce
+
+![html period table](https://atomicdesign.bradfrost.com/images/content/html-periodic-table.png)
+
+## workflow
+
+in a perfect world, you would like to follow those steps :
+
+- design with a tool like figma : build templates and refactor web elements into reusable components
+- build a composition diagram, isolating and describing each component, defining and typing their inputs and outputs
+- define a project layout that must be enforced when actually developing, convert that using tools like storybook
+- when not following the initial web design template, try to think ahead and refactor components as soon as needed
+
+## going extreme
+
+## the stack
+
+- figma
+- storybook
+- component javascript library
+- tailwindcss
+
+## references
+
+- brad frost, _atomic web design_, url : https://atomicdesign.bradfrost.com/table-of-contents/
+- adam watham & steve schoger, refactoring ui, url : https://www.refactoringui.com/
