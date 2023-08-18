@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .article-tag {
+  }
+
+  .article-title {
+    @apply font-bold;
+  }
+
+  .article-author {
+    @apply text-lg;
+  }
+
+  .article-date {
+
+  }
+
+  .article-tag {
+    @apply border border-dark-secondary border-solid 
+    rounded-md 
+    hover:bg-dark-primary
+    hover:cursor-pointer
+    hover:text-light-primary
+    w-fit
+    pl-2 pr-2;
+  }
+}

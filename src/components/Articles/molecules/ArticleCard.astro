@@ -7,10 +7,10 @@ import ArticleTitle from "../atoms/ArticleTitle.astro";
 const { metadata } = Astro.props;
 ---
 
-<a href=`${metadata.slug}`>
-  <ArticleTitle title={metadata.title} />
-  <ArticleAuthor author={metadata.author} />
-  <ArticleDate date={metadata.date} />
-  <ArticleAbstract abstract={metadata.abstract} />
-  <ArticleTags tags={metadata.tags} />
+<a class="article-card" href=`${metadata.slug}`>
+  <ArticleTitle title={metadata.data.title} />
+  <ArticleAuthor author={metadata.data.author} />
+  <ArticleDate date={metadata.data.date} />
+  <ArticleAbstract abstract={metadata.data.abstract} />
+  <ArticleTags tags={metadata.data.tags} />
 </a>

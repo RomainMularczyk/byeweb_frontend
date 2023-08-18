@@ -4,7 +4,7 @@
   import { ToastStatus } from "../../../types/Toast.d";
   import { QueryBackend } from "../../../utils/QueryBackend";
   import Toast from "../../Toasts/organisms/Toast.svelte";
-  import BookPageLayout from "../molecules/BookPageLayout.svelte";
+  import BookPage from "../molecules/BookPage.svelte";
 
   export let isbn: string;
   const backendResponse = async () => {
@@ -17,7 +17,7 @@
 {#await loadBooks}
   <p>Loading...</p>
 {:then books}
-  <BookPageLayout book={books.data.filter((b) => b.isbn === isbn)[0]} />
+  <BookPage book={books.data.filter((b) => b.isbn === isbn)[0]} />
 {:catch error}
   <Toast message={error.message} status={ToastStatus.error} />
 {/await}

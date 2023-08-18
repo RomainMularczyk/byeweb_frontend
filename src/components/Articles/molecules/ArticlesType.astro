@@ -1,0 +1,22 @@
+---
+import ArticleCard from "../../../components/Articles/molecules/ArticleCard.astro";
+import ArticlesTypeTitle from "../../../components/Articles/atoms/ArticlesTypeTitle.astro";
+import { getCollection } from "astro:content";
+
+const { type } = Astro.props;
+
+const articles = await getCollection("articles", (article) => {
+  return article.data.folder === type;
+});
+---
+
+<div class="max-w-fit">
+  <ArticlesTypeTitle type={type} />
+  <div class="ml-12 mr-12 articles-list">
+   {
+      articles.map((article) => {
+        return <ArticleCard metadata={article} />;
+      })
+    }
+  </div>
+</div>

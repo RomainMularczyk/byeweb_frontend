@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .article-card {
+    @apply flex flex-col justify-center
+    hover:bg-dark-primary hover:text-light-primary
+    pl-4 pr-4 pt-2 pb-4
+    hover:cursor-pointer
+    border-l-2 border-dark-primary;
+  }
+}

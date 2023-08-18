@@ -1,10 +1,18 @@
-<script lang="ts">
-</script>
-
+---
+const errors = "";
+if (Astro.request.method === "POST") {
+  try {
+    const data = await Astro.request.formData()
+    
+  } catch (err) {
+    errors = "An error occurred."
+  }
+}
+---
 <div>
   <h1>login</h1>
 
-  <form class="admin-form">
+  <form class="admin-form" method="POST">
     <input
       class="admin-input"
       type="text"
@@ -17,6 +25,7 @@
       type="password"
       name="password"
       required
+      minlength="6"
       placeholder="password"
     />
     <button class="admin-btn">go</button>

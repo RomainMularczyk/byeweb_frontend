@@ -1,0 +1,38 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ArticleCard from "../../../components/Articles/molecules/ArticleCard.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = await Astro.glob("../../../content/articles/*/*.md");
+  const uniqueTags = new Set();
+
+  articles.forEach((article) => {
+    article.frontmatter.tags.forEach((tag) => {
+      return uniqueTags.add(tag.replace(" ", "-"));
+    });
+  });
+  return Array.from(uniqueTags).map((tag) => ({
+    params: { tag: tag },
+  }));
+}
+
+const currentTag = Astro.url.pathname.split("/").slice(-1);
+
+const filteredArticles = await getCollection("articles", (article) => {
+  return article.data.tags.includes(String(currentTag).replace("-", " "));
+})
+
+const { tag } = Astro.params;
+---
+
+<Layout>
+  <h2>{currentTag}</h2>
+  <div class="ml-12 mr-12 articles-list">
+    {filteredArticles.map((article) => {
+      return (
+        <ArticleCard metadata={article}/>
+      )
+    })}
+  </div>
+</Layout>

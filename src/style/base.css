@@ -1,16 +1,60 @@
+@import "./organisms/404";
+@import "./organisms/articles";
+@import "./organisms/admin";
+@import "./organisms/books";
 @import "./organisms/footer";
+@import "./organisms/header";
 @import "./organisms/menu";
+
+@import "./atoms/button";
+@import "./atoms/form";
+@import "./atoms/input";
+@import "./atoms/link";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply flex flex-col min-h-screen;
+  @apply flex flex-col min-h-screen
+  bg-light-primary;
 }
 
 h1 {
-  @apply self-center
-  text-3xl font-bold
-  pt-3 pb-3;
+  @apply pl-32
+  mt-10
+  text-3xl font-bold;
+}
+
+h1 {
+  font-family: Carbono;
+}
+
+h2 {
+  @apply pl-32
+  mt-4 mb-4
+  text-2xl font-bold;
+}
+
+h2 {
+  font-family: Carbono;
+}
+
+.boxed-h1 {
+  @apply border-y border-dark-primary
+  ml-10 mr-[50rem];
+}
+
+.boxed-h2 {
+  @apply border-y border-dark-primary
+  ml-10;
+}
+
+@font-face {
+  font-family: "Carbono";
+  src: url("/fonts/Carbono-BqVn.tff") format("tff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  -webkit-text-fill-color: red;
 }

@@ -1,0 +1,36 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import ArticleCard from "../../../components/Articles/molecules/ArticleCard.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const articles = await Astro.glob("../../../content/articles/*/*.md");
+  const uniqueAuthors = new Set();
+
+  articles.forEach((article) => {
+    uniqueAuthors.add(article.frontmatter.author);
+  });
+  return Array.from(uniqueAuthors).map((author) => ({
+    params: { author: author },
+  }));
+}
+
+const currentAuthor = Astro.url.pathname.split("/").slice(-1);
+
+const filteredArticles = await getCollection("articles", (article) => {
+  return article.data.author === String(currentAuthor);
+})
+
+const { author } = Astro.params;
+---
+
+<Layout>
+  <h2>{currentAuthor}</h2>
+  <div class="ml-12 mr-12 articles-list">
+    {filteredArticles.map((article) => {
+      return (
+        <ArticleCard metadata={article}/>
+      )
+    })}
+  </div>
+</Layout>

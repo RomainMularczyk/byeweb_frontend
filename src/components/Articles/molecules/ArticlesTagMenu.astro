@@ -1,0 +1,20 @@
+---
+const articles = await Astro.glob("../../../content/articles/*/*{.md,.mdx}");
+const uniqueTags = new Set();
+
+articles.forEach((article) => {
+  article.frontmatter.tags.forEach((tag) => uniqueTags.add(tag))
+});
+---
+
+<div class="max-w-fit">
+  <h2>browse by tags</h2>
+  <div class="mb-4"/>
+  <ul class="articles-tags">
+    {Array.from(uniqueTags).map((tag) => (
+      <li class="article-tag">
+        <a href=`articles/tag/${tag.replace(" ", "-")}`>{tag}</a>
+      </li>
+    ))}
+  </ul>
+</div>

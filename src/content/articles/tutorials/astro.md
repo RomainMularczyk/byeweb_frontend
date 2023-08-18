@@ -1,11 +1,11 @@
 ---
 isDraft: false
-title: GPG primer (with an application to Git)
+title: Astro 
 tags:
   - cryptography
 date: 2023-05-11
 author: byeweb
-folder: practicals
+folder: tutorials
 ---
 
 # What's GPG ?

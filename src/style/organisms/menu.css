@@ -11,8 +11,8 @@
     @apply flex-grow self-center
     pt-3 pb-3
     border-r-2 border-t-2 border-b-2
-    border-solid border-black
-    hover:bg-black hover:text-white;
+    border-solid border-dark-primary
+    hover:bg-dark-primary hover:text-light-primary;
   }
 
   .menu-item-text {

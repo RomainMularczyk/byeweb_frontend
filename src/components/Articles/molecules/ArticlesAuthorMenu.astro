@@ -1,0 +1,20 @@
+---
+const articles = await Astro.glob("../../../content/articles/*/*{.md,.mdx}");
+const uniqueAuthors = new Set();
+
+articles.forEach((article) => {
+  uniqueAuthors.add(article.frontmatter.author);
+})
+---
+
+<div class="max-w-fit">
+  <h2>browse by author</h2>
+  <div class="mb-4"/>
+  <ul class="articles-authors">
+    {Array.from(uniqueAuthors).map((author) => (
+      <li class="article-author">
+        <a href=`articles/author/${author}`>{author}</a>
+      </li>
+    ))}
+  </ul>
+</div>

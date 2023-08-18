@@ -1,0 +1,13 @@
+---
+import ArticlesType from "../../../components/Articles/molecules/ArticlesType.astro";
+import Layout from "../../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles", (article) => {
+  return article.data.folder === "tutorials";
+});
+---
+
+<Layout title="tutorials">
+  <ArticlesType type="tutorials" />
+</Layout>
