@@ -1,24 +1,20 @@
----
-const errors = "";
-if (Astro.request.method === "POST") {
-  try {
-    const data = await Astro.request.formData()
-    
-  } catch (err) {
-    errors = "An error occurred."
-  }
-}
----
+<script lang="ts">
+  import { Fetch } from "../../../utils/Fetch";
+
+
+</script>
+
 <div>
   <h1>login</h1>
 
-  <form class="admin-form" method="POST">
+  <form class="admin-form">
     <input
       class="admin-input"
       type="text"
       name="username"
       required
       placeholder="username"
+      on:change={handleChange}
     />
     <input
       class="admin-input"
@@ -27,6 +23,7 @@ if (Astro.request.method === "POST") {
       required
       minlength="6"
       placeholder="password"
+      on:change={handleChange}
     />
     <button class="admin-btn">go</button>
   </form>
